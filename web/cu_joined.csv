@@ -1,0 +1,201 @@
+,name,total_Gt_CO2,headquarters,type
+0,Coal India,57.722,India,Coal
+1,China Shenhua,36.806999999999995,China,Coal
+2,Adani,25.383000000000003,India,Coal
+3,Shanxi Coking,18.445,China,Coal
+4,Anglo American,13.488,United Kingdom,Coal
+5,BHP Billiton,12.350999999999999,United Kingdom,Coal
+6,Yitai Coal,12.222999999999999,China,Coal
+7,Datang Intl,12.206,China,Coal
+8,China Coal,12.103,China,Coal
+9,Peabody Energy,11.484000000000002,United States,Coal
+10,Glencore Xstrata,10.698,Switzerland,Coal
+11,Datong Coal,10.280999999999999,China,Coal
+12,Yanzhou Coal,9.788,China,Coal
+13,DEH,9.339,Greece,Coal
+14,Exxaro,8.793,South Africa,Coal
+15,Yangquan Coal,7.297999999999999,China,Coal
+16,Mechel,6.739,Russia,Coal
+17,Arch Coal,6.513,United States,Coal
+18,Alpha Natural Resources,5.457999999999999,United States,Coal
+19,EVRAZ,4.855,United Kingdom,Coal
+20,Mitsubishi,4.738,Japan,Coal
+21,Vale,4.401,Brazil,Coal
+22,Raspadskaya,4.084,Russia,Coal
+23,Rio Tinto,3.696,United Kingdom,Coal
+24,Asia Resource,3.181,United Kingdom,Coal
+25,Rusal,3.0810000000000004,Cyprus,Coal
+26,Neyveli Lignite,3.035,India,Coal
+27,Pingdingshan,3.023,China,Coal
+28,Cloud Peak,2.753,United States,Coal
+29,Sasol,2.7310000000000003,South Africa,Coal
+30,Tata Steel,2.7089999999999996,India,Coal
+31,AGL,2.7039999999999997,Australia,Coal
+32,Teck,2.603,Canada,Coal
+33,Severstal,2.577,Russia,Coal
+34,Coalspur,2.545,Canada,Coal
+35,Kuzbass Fuel ,2.504,Russia,Coal
+36,Polyus Gold,2.294,Russia,Coal
+37,Energy Ventures,2.184,Norway,Coal
+38,Whitehaven Coal,2.055,Australia,Coal
+39,Banpu,2.04,Thailand,Coal
+40,Bayan,1.9569999999999999,Indonesia,Coal
+41,RWE,1.943,Germany,Coal
+42,Consol Energy,1.8869999999999998,United States,Coal
+43,WHSP,1.851,Australia,Coal
+44,Westmoreland,1.835,United States,Coal
+45,Resource Generation,1.818,Australia,Coal
+46,Churchill Mining,1.745,United Kingdom,Coal
+47,NTPC,1.74,India,Coal
+48,Adaro,1.607,Indonesia,Coal
+49,Nacco,1.557,United States,Coal
+50,Idemitsu Kosan,1.53,Japan,Coal
+51,ARLP,1.4680000000000002,United States,Coal
+52,Huolinhe Opencut,1.3869999999999998,China,Coal
+53,Golden Energy,1.354,Norway,Coal
+54,Mitsui & Co,1.344,Japan,Coal
+55,CoAL,1.339,X,Coal
+56,NLMK,1.288,Russia,Coal
+57,Tata Power,1.062,India,Coal
+58,MMK OJSC,1.046,Russia,Coal
+59,Wesfarmers,1.011,Australia,Coal
+60,Kazakhmys,0.998,Kazakhstan,Coal
+61,New World Resources,0.972,United Kingdom,Coal
+62,MMC,0.903,Mongolia,Coal
+63,Itochu,0.878,Japan,Coal
+64,Cockatoo,0.8,Australia,Coal
+65,Shanxi Meijin Energy,0.784,China,Coal
+66,Jizhong Energy,0.742,China,Coal
+67,Bandanna,0.731,Australia,Coal
+68,Polo Resources,0.726,South Africa,Coal
+69,Allete,0.723,United States,Coal
+70,CLP Holdings,0.696,China,Coal
+71,Aspire,0.67,Australia,Coal
+72,Marubeni,0.568,Japan,Coal
+73,China Resources,0.5670000000000001,China,Coal
+74,Walter Energy,0.556,United States,Coal
+75,Coal Energy,0.503,X,Coal
+76,Indika,0.485,Indonesia,Coal
+77,Arcelor Mittal,0.46399999999999997,Luxembourg,Coal
+78,FirstEnergy,0.45799999999999996,United States,Coal
+79,Black Hills,0.431,United States,Coal
+80,Wescoal,0.43,South Africa,Coal
+81,Grupo Mexico,0.42,Mexico,Coal
+82,ARM,0.38299999999999995,South Africa,Coal
+83,Shanxi Coal,0.376,China,Coal
+84,Capital Power,0.36700000000000005,Canada,Coal
+85,PTT,0.359,Thailand,Coal
+86,Shanxi Lanhua Sci-Tech,0.33799999999999997,China,Coal
+87,Fortune,0.32799999999999996,Canada,Coal
+88,Cardero,0.32299999999999995,Canada,Coal
+89,Zhengzhou Coal,0.319,China,Coal
+90,SAIL,0.307,India,Coal
+91,JSPL,0.301,India,Coal
+92,Shougang Fushan,0.299,China,Coal
+93,Jingyuan,0.297,China,Coal
+94,Stanmore,0.287,Australia,Coal
+95,Prophecy Coal,0.272,Canada,Coal
+96,Cliffs Natural Resources,0.247,United States,Coal
+97,James River,0.195,United States,Coal
+98,CESC,0.185,India,Coal
+99,Alcoa,0.18,United States,Coal
+100,Gazprom,43.915,Russia,Oil & Gas
+101,Rosneft,13.224,Russia,Oil & Gas
+102,PetroChina,8.591000000000001,China,Oil & Gas
+103,ExxonMobil,8.222999999999999,United States,Oil & Gas
+104,Lukoil,6.9879999999999995,Russia,Oil & Gas
+105,BP,6.718999999999999,United Kingdom,Oil & Gas
+106,Petrobras,5.432,Brazil,Oil & Gas
+107,Royal Dutch Shell,4.544,Netherlands,Oil & Gas
+108,Chevron,4.073,United States,Oil & Gas
+109,Novatek,3.853,Russia,Oil & Gas
+110,Total,3.802,France,Oil & Gas
+111,ConocoPhillips,2.798,United States,Oil & Gas
+112,Tatneft,2.62,Russia,Oil & Gas
+113,ONGC,2.457,India,Oil & Gas
+114,ENI,2.356,Italy,Oil & Gas
+115,Statoil ,1.985,Norway,Oil & Gas
+116,Sinopec,1.722,China,Oil & Gas
+117,CNOOC ,1.548,China,Oil & Gas
+118,Occidental,1.327,United States,Oil & Gas
+119,BG Group,1.122,United Kingdom,Oil & Gas
+120,Canadian Natural Resources ,0.995,Canada,Oil & Gas
+121,Anadarko Petroleum ,0.9840000000000001,United States,Oil & Gas
+122,Apache ,0.9690000000000001,United States,Oil & Gas
+123,Chesapeake Energy ,0.909,United States,Oil & Gas
+124,Inpex ,0.9079999999999999,Japan,Oil & Gas
+125,Bashneft,0.892,Russia,Oil & Gas
+126,Devon Energy ,0.889,United States,Oil & Gas
+127,BHP Billiton,0.8540000000000001,United Kingdom,Oil & Gas
+128,Repsol,0.823,Spain,Oil & Gas
+129,Ecopetrol,0.774,Colombia,Oil & Gas
+130,EOG Resources,0.772,United States,Oil & Gas
+131,Suncor Energy ,0.715,Canada,Oil & Gas
+132,Marathon Oil ,0.6829999999999999,United States,Oil & Gas
+133,Hess ,0.565,United States,Oil & Gas
+134,Imperial Oil ,0.552,Canada,Oil & Gas
+135,Encana ,0.5479999999999999,Canada,Oil & Gas
+136,Noble Energy,0.49,United States,Oil & Gas
+137,BASF,0.483,Germany,Oil & Gas
+138,EQT ,0.449,United States,Oil & Gas
+139,Range Resources ,0.44299999999999995,Australia,Oil & Gas
+140,Continental Resources,0.426,United States,Oil & Gas
+141,OMV,0.42,Austria,Oil & Gas
+142,Antero Resources,0.41,United States,Oil & Gas
+143,KazMunaiGas EP,0.4,Kazakhstan,Oil & Gas
+144,YPF ,0.389,Argentina,Oil & Gas
+145,Southwestern Energy ,0.38,United States,Oil & Gas
+146,Cenovus Energy ,0.374,Canada,Oil & Gas
+147,Linn Energy,0.364,United States,Oil & Gas
+148,Woodside Petroleum,0.36,Australia,Oil & Gas
+149,Husky Energy ,0.34299999999999997,Canada,Oil & Gas
+150,PTT ,0.317,Thailand,Oil & Gas
+151,Consol Energy ,0.312,United States,Oil & Gas
+152,Pioneer Natural Resources ,0.302,United States,Oil & Gas
+153,Cabot Oil & Gas ,0.3,United States,Oil & Gas
+154,WPX Energy,0.275,United States,Oil & Gas
+155,SK Innovation ,0.263,South Korea,Oil & Gas
+156,Whiting Petroleum ,0.244,United States,Oil & Gas
+157,Murphy Oil ,0.242,United States,Oil & Gas
+158,QEP Resources ,0.233,United States,Oil & Gas
+159,Newfield Exploration ,0.223,United States,Oil & Gas
+160,Dragon Oil,0.20199999999999999,United Arab Emirates,Oil & Gas
+161,Sasol ,0.201,South Africa,Oil & Gas
+162,Ultra Petroleum ,0.2,United States,Oil & Gas
+163,Santos,0.195,Australia,Oil & Gas
+164,Concho Resources ,0.19399999999999998,United States,Oil & Gas
+165,Denbury Resources ,0.19,United States,Oil & Gas
+166,Freeport-McMoRan,0.183,United States,Oil & Gas
+167,Maersk Group,0.174,Denmark,Oil & Gas
+168,MEG Energy ,0.17300000000000001,Canada,Oil & Gas
+169,SandRidge Energy,0.157,United States,Oil & Gas
+170,Crescent Point Energy ,0.157,Canada,Oil & Gas
+171,GDF SUEZ,0.155,France,Oil & Gas
+172,Pacific Rubiales Energy ,0.154,Canada,Oil & Gas
+173,SM Energy ,0.14800000000000002,United States,Oil & Gas
+174,JX Holdings ,0.146,Japan,Oil & Gas
+175,Cimarex Energy ,0.14400000000000002,United States,Oil & Gas
+176,Mitsui & Co ,0.142,Japan,Oil & Gas
+177,Penn West Petroleum ,0.13699999999999998,Canada,Oil & Gas
+178,Polish Oil & Gas,0.132,Poland,Oil & Gas
+179,MOL,0.131,Hungary,Oil & Gas
+180,Energen ,0.128,United States,Oil & Gas
+181,TAQA,0.12300000000000001,United Arab Emirates,Oil & Gas
+182,Oil Search,0.114,Papua New Guinea,Oil & Gas
+183,Oil India,0.113,India,Oil & Gas
+184,ARC Resources ,0.11199999999999999,Canada,Oil & Gas
+185,Genel Energy ,0.107,United Kingdom,Oil & Gas
+186,Canadian Oil Sands ,0.102,Canada,Oil & Gas
+187,Energy XXI,0.096,United States,Oil & Gas
+188,PDC Energy,0.095,United States,Oil & Gas
+189,Oasis Petroleum ,0.094,United States,Oil & Gas
+190,Tourmaline Oil ,0.09300000000000001,Canada,Oil & Gas
+191,Rosetta Resources,0.09300000000000001,United States,Oil & Gas
+192,RWE ,0.09300000000000001,Germany,Oil & Gas
+193,National Fuel Gas,0.08800000000000001,United States,Oil & Gas
+194,Peyto E&D  ,0.08800000000000001,Canada,Oil & Gas
+195,Xcite Energy ,0.08800000000000001,British Virgin Islands,Oil & Gas
+196,Tullow Oil,0.087,United Kingdom,Oil & Gas
+197,Energi Mega Persada ,0.085,Indonesia,Oil & Gas
+198,Breitburn Energy Partners,0.081,United States,Oil & Gas
+199,Enerplus ,0.08,Canada,Oil & Gas

@@ -1,0 +1,1240 @@
+{
+  "name": "top",
+  "children": [
+    {
+      "name": "Canada",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "Enerplus ",
+              "size": "0.08"
+            },
+            {
+              "name": "Peyto E&D  ",
+              "size": "0.08800000000000001"
+            },
+            {
+              "name": "Tourmaline Oil ",
+              "size": "0.09300000000000001"
+            },
+            {
+              "name": "Canadian Oil Sands ",
+              "size": "0.102"
+            },
+            {
+              "name": "ARC Resources ",
+              "size": "0.11199999999999999"
+            },
+            {
+              "name": "Penn West Petroleum ",
+              "size": "0.13699999999999998"
+            },
+            {
+              "name": "Pacific Rubiales Energy ",
+              "size": "0.154"
+            },
+            {
+              "name": "Crescent Point Energy ",
+              "size": "0.157"
+            },
+            {
+              "name": "MEG Energy ",
+              "size": "0.17300000000000001"
+            },
+            {
+              "name": "Husky Energy ",
+              "size": "0.34299999999999997"
+            },
+            {
+              "name": "Cenovus Energy ",
+              "size": "0.374"
+            },
+            {
+              "name": "Encana ",
+              "size": "0.5479999999999999"
+            },
+            {
+              "name": "Imperial Oil ",
+              "size": "0.552"
+            },
+            {
+              "name": "Suncor Energy ",
+              "size": "0.715"
+            },
+            {
+              "name": "Canadian Natural Resources ",
+              "size": "0.995"
+            }
+          ]
+        },
+        {
+          "name": "coal",
+          "children": [
+            {
+              "name": "Prophecy Coal",
+              "size": "0.272"
+            },
+            {
+              "name": "Cardero",
+              "size": "0.32299999999999995"
+            },
+            {
+              "name": "Fortune",
+              "size": "0.32799999999999996"
+            },
+            {
+              "name": "Capital Power",
+              "size": "0.36700000000000005"
+            },
+            {
+              "name": "Coalspur",
+              "size": "2.545"
+            },
+            {
+              "name": "Teck",
+              "size": "2.603"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "United States",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "Breitburn Energy Partners",
+              "size": "0.081"
+            },
+            {
+              "name": "National Fuel Gas",
+              "size": "0.08800000000000001"
+            },
+            {
+              "name": "Rosetta Resources",
+              "size": "0.09300000000000001"
+            },
+            {
+              "name": "Oasis Petroleum ",
+              "size": "0.094"
+            },
+            {
+              "name": "PDC Energy",
+              "size": "0.095"
+            },
+            {
+              "name": "Energy XXI",
+              "size": "0.096"
+            },
+            {
+              "name": "Energen ",
+              "size": "0.128"
+            },
+            {
+              "name": "Cimarex Energy ",
+              "size": "0.14400000000000002"
+            },
+            {
+              "name": "SM Energy ",
+              "size": "0.14800000000000002"
+            },
+            {
+              "name": "SandRidge Energy",
+              "size": "0.157"
+            },
+            {
+              "name": "Freeport-McMoRan",
+              "size": "0.183"
+            },
+            {
+              "name": "Denbury Resources ",
+              "size": "0.19"
+            },
+            {
+              "name": "Concho Resources ",
+              "size": "0.19399999999999998"
+            },
+            {
+              "name": "Ultra Petroleum ",
+              "size": "0.2"
+            },
+            {
+              "name": "Newfield Exploration ",
+              "size": "0.223"
+            },
+            {
+              "name": "QEP Resources ",
+              "size": "0.233"
+            },
+            {
+              "name": "Murphy Oil ",
+              "size": "0.242"
+            },
+            {
+              "name": "Whiting Petroleum ",
+              "size": "0.244"
+            },
+            {
+              "name": "WPX Energy",
+              "size": "0.275"
+            },
+            {
+              "name": "Cabot Oil & Gas ",
+              "size": "0.3"
+            },
+            {
+              "name": "Pioneer Natural Resources ",
+              "size": "0.302"
+            },
+            {
+              "name": "Consol Energy ",
+              "size": "0.312"
+            },
+            {
+              "name": "Linn Energy",
+              "size": "0.364"
+            },
+            {
+              "name": "Southwestern Energy ",
+              "size": "0.38"
+            },
+            {
+              "name": "Antero Resources",
+              "size": "0.41"
+            },
+            {
+              "name": "Continental Resources",
+              "size": "0.426"
+            },
+            {
+              "name": "EQT ",
+              "size": "0.449"
+            },
+            {
+              "name": "Noble Energy",
+              "size": "0.49"
+            },
+            {
+              "name": "Hess ",
+              "size": "0.565"
+            },
+            {
+              "name": "Marathon Oil ",
+              "size": "0.6829999999999999"
+            },
+            {
+              "name": "EOG Resources",
+              "size": "0.772"
+            },
+            {
+              "name": "Devon Energy ",
+              "size": "0.889"
+            },
+            {
+              "name": "Chesapeake Energy ",
+              "size": "0.909"
+            },
+            {
+              "name": "Apache ",
+              "size": "0.9690000000000001"
+            },
+            {
+              "name": "Anadarko Petroleum ",
+              "size": "0.9840000000000001"
+            },
+            {
+              "name": "Occidental",
+              "size": "1.327"
+            },
+            {
+              "name": "ConocoPhillips",
+              "size": "2.798"
+            },
+            {
+              "name": "Chevron",
+              "size": "4.073"
+            },
+            {
+              "name": "ExxonMobil",
+              "size": "8.222999999999999"
+            }
+          ]
+        },
+        {
+          "name": "coal",
+          "children": [
+            {
+              "name": "Alcoa",
+              "size": "0.18"
+            },
+            {
+              "name": "James River",
+              "size": "0.195"
+            },
+            {
+              "name": "Cliffs Natural Resources",
+              "size": "0.247"
+            },
+            {
+              "name": "Black Hills",
+              "size": "0.431"
+            },
+            {
+              "name": "FirstEnergy",
+              "size": "0.45799999999999996"
+            },
+            {
+              "name": "Walter Energy",
+              "size": "0.556"
+            },
+            {
+              "name": "Allete",
+              "size": "0.723"
+            },
+            {
+              "name": "ARLP",
+              "size": "1.4680000000000002"
+            },
+            {
+              "name": "Nacco",
+              "size": "1.557"
+            },
+            {
+              "name": "Westmoreland",
+              "size": "1.835"
+            },
+            {
+              "name": "Consol Energy",
+              "size": "1.8869999999999998"
+            },
+            {
+              "name": "Cloud Peak",
+              "size": "2.753"
+            },
+            {
+              "name": "Alpha Natural Resources",
+              "size": "5.457999999999999"
+            },
+            {
+              "name": "Arch Coal",
+              "size": "6.513"
+            },
+            {
+              "name": "Peabody Energy",
+              "size": "11.484000000000002"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Indonesia",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "Energi Mega Persada ",
+              "size": "0.085"
+            }
+          ]
+        },
+        {
+          "name": "coal",
+          "children": [
+            {
+              "name": "Indika",
+              "size": "0.485"
+            },
+            {
+              "name": "Adaro",
+              "size": "1.607"
+            },
+            {
+              "name": "Bayan",
+              "size": "1.9569999999999999"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "United Kingdom",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "Tullow Oil",
+              "size": "0.087"
+            },
+            {
+              "name": "Genel Energy ",
+              "size": "0.107"
+            },
+            {
+              "name": "BHP Billiton",
+              "size": "0.8540000000000001"
+            },
+            {
+              "name": "BG Group",
+              "size": "1.122"
+            },
+            {
+              "name": "BP",
+              "size": "6.718999999999999"
+            }
+          ]
+        },
+        {
+          "name": "coal",
+          "children": [
+            {
+              "name": "New World Resources",
+              "size": "0.972"
+            },
+            {
+              "name": "Churchill Mining",
+              "size": "1.745"
+            },
+            {
+              "name": "Asia Resource",
+              "size": "3.181"
+            },
+            {
+              "name": "Rio Tinto",
+              "size": "3.696"
+            },
+            {
+              "name": "EVRAZ",
+              "size": "4.855"
+            },
+            {
+              "name": "BHP Billiton",
+              "size": "12.350999999999999"
+            },
+            {
+              "name": "Anglo American",
+              "size": "13.488"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "British Virgin Islands",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "Xcite Energy ",
+              "size": "0.08800000000000001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Germany",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "RWE ",
+              "size": "0.09300000000000001"
+            },
+            {
+              "name": "BASF",
+              "size": "0.483"
+            }
+          ]
+        },
+        {
+          "name": "coal",
+          "children": [
+            {
+              "name": "RWE",
+              "size": "1.943"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "India",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "Oil India",
+              "size": "0.113"
+            },
+            {
+              "name": "ONGC",
+              "size": "2.457"
+            }
+          ]
+        },
+        {
+          "name": "coal",
+          "children": [
+            {
+              "name": "CESC",
+              "size": "0.185"
+            },
+            {
+              "name": "JSPL",
+              "size": "0.301"
+            },
+            {
+              "name": "SAIL",
+              "size": "0.307"
+            },
+            {
+              "name": "Tata Power",
+              "size": "1.062"
+            },
+            {
+              "name": "NTPC",
+              "size": "1.74"
+            },
+            {
+              "name": "Tata Steel",
+              "size": "2.7089999999999996"
+            },
+            {
+              "name": "Neyveli Lignite",
+              "size": "3.035"
+            },
+            {
+              "name": "Adani",
+              "size": "25.383000000000003"
+            },
+            {
+              "name": "Coal India",
+              "size": "57.722"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Papua New Guinea",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "Oil Search",
+              "size": "0.114"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "United Arab Emirates",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "TAQA",
+              "size": "0.12300000000000001"
+            },
+            {
+              "name": "Dragon Oil",
+              "size": "0.20199999999999999"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hungary",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "MOL",
+              "size": "0.131"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Poland",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "Polish Oil & Gas",
+              "size": "0.132"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Japan",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "Mitsui & Co ",
+              "size": "0.142"
+            },
+            {
+              "name": "JX Holdings ",
+              "size": "0.146"
+            },
+            {
+              "name": "Inpex ",
+              "size": "0.9079999999999999"
+            }
+          ]
+        },
+        {
+          "name": "coal",
+          "children": [
+            {
+              "name": "Marubeni",
+              "size": "0.568"
+            },
+            {
+              "name": "Itochu",
+              "size": "0.878"
+            },
+            {
+              "name": "Mitsui & Co",
+              "size": "1.344"
+            },
+            {
+              "name": "Idemitsu Kosan",
+              "size": "1.53"
+            },
+            {
+              "name": "Mitsubishi",
+              "size": "4.738"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "France",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "GDF SUEZ",
+              "size": "0.155"
+            },
+            {
+              "name": "Total",
+              "size": "3.802"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Denmark",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "Maersk Group",
+              "size": "0.174"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Australia",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "Santos",
+              "size": "0.195"
+            },
+            {
+              "name": "Woodside Petroleum",
+              "size": "0.36"
+            },
+            {
+              "name": "Range Resources ",
+              "size": "0.44299999999999995"
+            }
+          ]
+        },
+        {
+          "name": "coal",
+          "children": [
+            {
+              "name": "Stanmore",
+              "size": "0.287"
+            },
+            {
+              "name": "Aspire",
+              "size": "0.67"
+            },
+            {
+              "name": "Bandanna",
+              "size": "0.731"
+            },
+            {
+              "name": "Cockatoo",
+              "size": "0.8"
+            },
+            {
+              "name": "Wesfarmers",
+              "size": "1.011"
+            },
+            {
+              "name": "Resource Generation",
+              "size": "1.818"
+            },
+            {
+              "name": "WHSP",
+              "size": "1.851"
+            },
+            {
+              "name": "Whitehaven Coal",
+              "size": "2.055"
+            },
+            {
+              "name": "AGL",
+              "size": "2.7039999999999997"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "South Africa",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "Sasol ",
+              "size": "0.201"
+            }
+          ]
+        },
+        {
+          "name": "coal",
+          "children": [
+            {
+              "name": "ARM",
+              "size": "0.38299999999999995"
+            },
+            {
+              "name": "Wescoal",
+              "size": "0.43"
+            },
+            {
+              "name": "Polo Resources",
+              "size": "0.726"
+            },
+            {
+              "name": "Sasol",
+              "size": "2.7310000000000003"
+            },
+            {
+              "name": "Exxaro",
+              "size": "8.793"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "South Korea",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "SK Innovation ",
+              "size": "0.263"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Thailand",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "PTT ",
+              "size": "0.317"
+            }
+          ]
+        },
+        {
+          "name": "coal",
+          "children": [
+            {
+              "name": "PTT",
+              "size": "0.359"
+            },
+            {
+              "name": "Banpu",
+              "size": "2.04"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Argentina",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "YPF ",
+              "size": "0.389"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kazakhstan",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "KazMunaiGas EP",
+              "size": "0.4"
+            }
+          ]
+        },
+        {
+          "name": "coal",
+          "children": [
+            {
+              "name": "Kazakhmys",
+              "size": "0.998"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Austria",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "OMV",
+              "size": "0.42"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Colombia",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "Ecopetrol",
+              "size": "0.774"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Spain",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "Repsol",
+              "size": "0.823"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Russia",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "Bashneft",
+              "size": "0.892"
+            },
+            {
+              "name": "Tatneft",
+              "size": "2.62"
+            },
+            {
+              "name": "Novatek",
+              "size": "3.853"
+            },
+            {
+              "name": "Lukoil",
+              "size": "6.9879999999999995"
+            },
+            {
+              "name": "Rosneft",
+              "size": "13.224"
+            },
+            {
+              "name": "Gazprom",
+              "size": "43.915"
+            }
+          ]
+        },
+        {
+          "name": "coal",
+          "children": [
+            {
+              "name": "MMK OJSC",
+              "size": "1.046"
+            },
+            {
+              "name": "NLMK",
+              "size": "1.288"
+            },
+            {
+              "name": "Polyus Gold",
+              "size": "2.294"
+            },
+            {
+              "name": "Kuzbass Fuel ",
+              "size": "2.504"
+            },
+            {
+              "name": "Severstal",
+              "size": "2.577"
+            },
+            {
+              "name": "Raspadskaya",
+              "size": "4.084"
+            },
+            {
+              "name": "Mechel",
+              "size": "6.739"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "China",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "CNOOC ",
+              "size": "1.548"
+            },
+            {
+              "name": "Sinopec",
+              "size": "1.722"
+            },
+            {
+              "name": "PetroChina",
+              "size": "8.591000000000001"
+            }
+          ]
+        },
+        {
+          "name": "coal",
+          "children": [
+            {
+              "name": "Jingyuan",
+              "size": "0.297"
+            },
+            {
+              "name": "Shougang Fushan",
+              "size": "0.299"
+            },
+            {
+              "name": "Zhengzhou Coal",
+              "size": "0.319"
+            },
+            {
+              "name": "Shanxi Lanhua Sci-Tech",
+              "size": "0.33799999999999997"
+            },
+            {
+              "name": "Shanxi Coal",
+              "size": "0.376"
+            },
+            {
+              "name": "China Resources",
+              "size": "0.5670000000000001"
+            },
+            {
+              "name": "CLP Holdings",
+              "size": "0.696"
+            },
+            {
+              "name": "Jizhong Energy",
+              "size": "0.742"
+            },
+            {
+              "name": "Shanxi Meijin Energy",
+              "size": "0.784"
+            },
+            {
+              "name": "Huolinhe Opencut",
+              "size": "1.3869999999999998"
+            },
+            {
+              "name": "Pingdingshan",
+              "size": "3.023"
+            },
+            {
+              "name": "Yangquan Coal",
+              "size": "7.297999999999999"
+            },
+            {
+              "name": "Yanzhou Coal",
+              "size": "9.788"
+            },
+            {
+              "name": "Datong Coal",
+              "size": "10.280999999999999"
+            },
+            {
+              "name": "China Coal",
+              "size": "12.103"
+            },
+            {
+              "name": "Datang Intl",
+              "size": "12.206"
+            },
+            {
+              "name": "Yitai Coal",
+              "size": "12.222999999999999"
+            },
+            {
+              "name": "Shanxi Coking",
+              "size": "18.445"
+            },
+            {
+              "name": "China Shenhua",
+              "size": "36.806999999999995"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Norway",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "Statoil ",
+              "size": "1.985"
+            }
+          ]
+        },
+        {
+          "name": "coal",
+          "children": [
+            {
+              "name": "Golden Energy",
+              "size": "1.354"
+            },
+            {
+              "name": "Energy Ventures",
+              "size": "2.184"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Italy",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "ENI",
+              "size": "2.356"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Netherlands",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "Royal Dutch Shell",
+              "size": "4.544"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brazil",
+      "children": [
+        {
+          "name": "oil_gas",
+          "children": [
+            {
+              "name": "Petrobras",
+              "size": "5.432"
+            }
+          ]
+        },
+        {
+          "name": "coal",
+          "children": [
+            {
+              "name": "Vale",
+              "size": "4.401"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mexico",
+      "children": [
+        {
+          "name": "coal",
+          "children": [
+            {
+              "name": "Grupo Mexico",
+              "size": "0.42"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Luxembourg",
+      "children": [
+        {
+          "name": "coal",
+          "children": [
+            {
+              "name": "Arcelor Mittal",
+              "size": "0.46399999999999997"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "X",
+      "children": [
+        {
+          "name": "coal",
+          "children": [
+            {
+              "name": "Coal Energy",
+              "size": "0.503"
+            },
+            {
+              "name": "CoAL",
+              "size": "1.339"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mongolia",
+      "children": [
+        {
+          "name": "coal",
+          "children": [
+            {
+              "name": "MMC",
+              "size": "0.903"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cyprus",
+      "children": [
+        {
+          "name": "coal",
+          "children": [
+            {
+              "name": "Rusal",
+              "size": "3.0810000000000004"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Greece",
+      "children": [
+        {
+          "name": "coal",
+          "children": [
+            {
+              "name": "DEH",
+              "size": "9.339"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Switzerland",
+      "children": [
+        {
+          "name": "coal",
+          "children": [
+            {
+              "name": "Glencore Xstrata",
+              "size": "10.698"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

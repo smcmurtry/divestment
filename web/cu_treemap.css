@@ -1,0 +1,33 @@
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.company_rect {
+	stroke: #ffffff;
+}
+
+.company_div, .country_div {
+	height: 100%;
+	width: 100%;
+    display: table;
+}
+
+
+.country_text {
+	font-size:40px;
+	color:#000;
+}
+
+.company_text, .country_text {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.company_text {
+	color: #ffffff;
+}
+.country_rect {
+	color:#d3d3d3;
+}
+

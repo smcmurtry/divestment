@@ -1,0 +1,109 @@
+<html>
+<head>
+
+</head>
+	<link rel="stylesheet" type="text/css" href="cu_treemap.css"/>
+<body><br><br>
+</body>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<script>
+
+var margin = {top: 50, right: 50, bottom: 50, left: 50},
+    width = window.innerWidth - margin.left - margin.right,
+    height = window.innerHeight - margin.top - margin.bottom;
+
+var color = d3.scale.category20(); //category10();
+
+var canvas = d3.select("body").append("svg")
+	.attr('width', width)
+	.attr('height', height);
+
+d3.json('cu_data_4.json', function(data) { 
+
+	var treemap = d3.layout.treemap()
+    	.size([width, height])
+    	.value(function(d) { return d.size; })
+    	.nodes(data);
+
+    var cells = canvas.selectAll(".cell")
+    	.data(treemap)
+    	.enter()
+    	.append("g")
+    	.attr("class", "cell");
+
+    cells.append("rect")
+    	.attr("x", function(d) { return d.x; })
+    	.attr("y", function(d) { return d.y; })
+    	.attr("width", function(d) { return d.dx; })
+    	.attr("height", function(d) { return d.dy; })
+    	.attr("fill", function(d) { return d.children ? "white" : color(d.parent.name) })
+		.attr("class", function(d) {
+			if (d.depth == 0) {
+				return 'top_rect';
+			} else if (d.depth == 1) {
+				return 'country_rect';
+			} else {
+				return 'company_rect';
+			}
+		});
+
+	canvas.selectAll("g")
+		.append("foreignObject")
+    	.attr("x", function(d) { return d.x; })
+    	.attr("y", function(d) { return d.y; })
+    	.attr("width", function(d) { return d.dx; })
+    	.attr("height", function(d) { return d.dy; })
+    	.append("xhtml:div")
+    	.attr("class", function(d) {
+			if (d.depth == 0) {
+				return 'top_div';
+			} else if (d.depth == 1) {
+				return 'country_div';
+			} else {
+				return 'company_div';
+			}
+		})
+		.append("xhtml:div")
+		.attr("class", function(d) {
+			if (d.depth == 0) {
+				return 'top_text';
+			} else if (d.depth == 1) {
+				return 'country_text';
+			} else {
+				return 'company_text';
+			}
+		})
+		.html(function(d) { return d.name; });
+
+	d3.selectAll(".company_text")
+		.style("font-size", function(d) { return Math.max(5, 0.15*Math.sqrt(d.area)) + 'px';});
+
+
+
+	d3.selectAll(".company_div")
+		.on("mouseover", function(d) {
+			// make the country light up
+    		d3.selectAll(".company_rect")
+    			.filter(function(e) { return e.parent.name != d.parent.name;})
+    			.style("opacity", null);
+
+    		d3.selectAll(".company_rect")
+    			.filter(function(e) { return e.parent.name == d.parent.name;})
+    			.style("opacity", 0.5);
+
+			d3.selectAll(".country_text")
+    			.filter(function(e) { return e.name != d.parent.name })
+    			.style("position", null)
+    		d3.selectAll(".country_text")
+    			.filter(function(e) { return e.name == d.parent.name })
+    			.style("position", "relative")
+
+  			});
+
+
+});
+
+</script>
+</html>

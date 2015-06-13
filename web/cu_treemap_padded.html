@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: auto;
+  position: relative;
+}
+
+</style>
+<body></body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+var margin = {top: 0, right: 0, bottom: 0, left: 0},
+    width = window.innerWidth - margin.left - margin.right,
+    height = window.innerHeight - margin.top - margin.bottom;
+
+var header_colour = "white",
+	parent_border_colour = "white",
+	leaf_border_colour = "white",
+	header_padding = 30,
+	right_padding = 20,
+	footer_padding = 10,
+	left_padding = 20;
+var color = d3.scale.category10();
+var country_color = d3.scale.category20();
+var padding = 10;
+var canvas = d3.select("body").append("svg")
+	.attr('width', width)
+	.attr('height', height);
+console.log(Math.log(10));
+
+d3.json('cu_data_4.json', function(data) { 
+
+	var treemap = d3.layout.treemap()
+    	.size([width, height])
+    	.value(function(d) { return d.size; })
+    	.padding([header_padding, right_padding, footer_padding, left_padding])
+    	//.sort(null)
+    	// .ratio(1)
+    	//.sort(null)
+    	// .padding(padding)
+    	// .round(true)
+    	.nodes(data);
+
+    console.log(treemap);
+	
+	// var treemap = [];
+
+	// for (var i = _treemap.length - 1; i >= 0; i--) {
+	// 	if (_treemap[i].dx > 0) { treemap.push(_treemap[i]) };
+	// }; 
+
+	// console.log(treemap);
+
+    var cells = canvas.selectAll(".cell")
+    	.data(treemap)
+    	.enter()
+    	.append("g")
+    	.attr("class", "cell");
+
+    cells.append("rect")
+    	.attr("x", function(d) { return d.x; })
+    	.attr("y", function(d) { return d.y; })
+    	.attr("width", function(d) { return d.dx;})// + 2*padding; })
+    	.attr("height", function(d) { return d.dy;})// + 2*padding; })
+    	.attr("fill", function(d) { return d.children ? header_colour : color(d.type) })
+    	//.attr("style", "opacity:0.5;")
+    	.attr("stroke", function(d) { return (d.depth == 1) ? parent_border_colour : leaf_border_colour; })
+    	//.attr("stroke-width", function(d) { return (d.depth == 1) ? 10 : 1})
+
+	canvas.selectAll("g")
+		.append("foreignObject")
+    	.attr("x", function(d) { return d.children ? d.x+left_padding : d.x; })
+    	.attr("y", function(d) { return d.y; })
+    	.attr("width", function(d) { return d.dx;})// + 2*padding; })
+    	.attr("height", function(d) { return d.dy;})//} + 2*padding; })
+    	.attr("class","foreignobj")
+		.append("xhtml:div")
+		// .attr("style", "width:auto")
+		.attr("dy", function(d) { return d.dy; })
+		.html(function(d) { return d.name; })
+		.attr("style", function(d) {
+			if (d.children) {
+				return "font-weight:700; "
+					+ "font-size:24px;";// + Math.max(5, 0.15*Math.sqrt(d.area)) + 'px;';
+
+ 
+
+			} else {
+				return "text-align:center; " 
+					+ "color: white; "
+					+ "font-size:" + Math.max(5, 0.15*Math.sqrt(d.area)) + 'px;';
+
+			} })
+		.style("opacity", function(d) {
+			if (d.depth == 0) {
+				// make "top" transparent
+				return 0;
+			}
+			else if (d.depth == 1) {
+				// var text_width = getTextWidth(d.name, "bold 24pt Helvetica" );
+				// if (text_width > d.dx) {
+				// 	return 0;
+				// } else {
+				return 1;
+				// }
+			} else {
+				return 1;
+			} })
+		.attr("class", "textdiv"); //adding a class allows us to style the text with CSS
+
+});
+
+function getTextWidth(text, font) {
+    // re-use canvas object for better performance
+    var canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"));
+    var context = canvas.getContext("2d");
+    context.font = font;
+    var metrics = context.measureText(text);
+    return metrics.width;
+};
+
+</script>
