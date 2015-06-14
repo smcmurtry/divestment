@@ -14,13 +14,13 @@ body {
 
 .country_text {
 	font-size:40px;
-	color:#000;
+	color:white;
 	opacity: 1;
 	position: fixed;
 	z-index: -1;
 }
 
-.company_text, .country_text {
+.company_text {
 	display: table-cell;
 	text-align: center;
 	vertical-align: middle;

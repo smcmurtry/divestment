@@ -6,7 +6,7 @@
 <body><br><br>
 </body>
 
-<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="d3.v3.min.js"></script>
 
 <script>
 
@@ -38,7 +38,7 @@ d3.json('cu_data_4.json', function(data) {
     	.attr("y", function(d) { return d.y; })
     	.attr("width", function(d) { return d.dx; })
     	.attr("height", function(d) { return d.dy; })
-    	.attr("fill", function(d) { return d.children ? null : color(d.parent.name) })
+    	.attr("fill", function(d) { return d.children ? "white" : color(d.parent.name) })
 		.attr("class", function(d) {
 			if (d.depth == 0) {
 				return 'top_rect';
@@ -80,18 +80,32 @@ d3.json('cu_data_4.json', function(data) {
 	d3.selectAll(".company_text")
 		.style("font-size", function(d) { return Math.max(5, 0.15*Math.sqrt(d.area)) + 'px';});
 
-
 	d3.selectAll(".company_div")
 		.on("mouseover", function(d) {
 			// make the country light up
 			d3.selectAll(".country_text")
-				.style("z-index", function(e) { return (e.name == d.parent.name) ? 0 : -1; });
+				.style("z-index", function(e) { return (e.name == d.parent.name) ? 0 : -1; })
+				.style("color", function(e) { return (e.name == d.parent.name) ? "black" : "white"; });
 
     		d3.selectAll(".company_rect")
-    			.style("opacity", function(e) { return (e.parent.name == d.parent.name) ? 0.7 : 1; });
+    			.style("opacity", function(e) { return (e.parent.name == d.parent.name) ? 0.5 : 1; });
+  			})
+		.on("click", function(d) { on_click(d); });
 
-  			});
+	d3.selectAll(".country_text")
+		.on("click", function(d) { on_click(d); });
+
 });
+
+function on_click(d) {
+	d3.selectAll(".country_text")
+		.style("z-index", -1)
+		.style("color", "white");
+
+	d3.selectAll(".company_rect")
+		.style("opacity", 1);
+
+}
 
 </script>
 </html>
