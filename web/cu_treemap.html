@@ -20,12 +20,6 @@ var canvas = d3.select("body").append("svg")
 	.attr('width', width)
 	.attr('height', height);
 
-d3.selection.prototype.moveToFront = function() {
-  return this.each(function(){
-    this.parentNode.appendChild(this);
-  });
-};
-
 d3.json('cu_data_4.json', function(data) { 
 
 	var treemap = d3.layout.treemap()
@@ -33,7 +27,7 @@ d3.json('cu_data_4.json', function(data) {
     	.value(function(d) { return d.size; })
     	.nodes(data);
 
- 	cells = canvas.selectAll(".cell")
+ 	var cells = canvas.selectAll(".cell")
     	.data(treemap)
     	.enter()
     	.append("g")
@@ -91,11 +85,10 @@ d3.json('cu_data_4.json', function(data) {
 		.on("mouseover", function(d) {
 			// make the country light up
 			d3.selectAll(".country_text")
-				.style("z-index", function(e) { return (e.name == d.parent.name) ? 0 : -1; })
+				.style("z-index", function(e) { return (e.name == d.parent.name) ? 0 : -1; });
 
     		d3.selectAll(".company_rect")
     			.style("opacity", function(e) { return (e.parent.name == d.parent.name) ? 0.7 : 1; });
-
 
   			});
 });
