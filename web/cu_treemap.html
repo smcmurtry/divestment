@@ -20,6 +20,12 @@ var canvas = d3.select("body").append("svg")
 	.attr('width', width)
 	.attr('height', height);
 
+d3.selection.prototype.moveToFront = function() {
+  return this.each(function(){
+    this.parentNode.appendChild(this);
+  });
+};
+
 d3.json('cu_data_4.json', function(data) { 
 
 	var treemap = d3.layout.treemap()
@@ -27,7 +33,7 @@ d3.json('cu_data_4.json', function(data) {
     	.value(function(d) { return d.size; })
     	.nodes(data);
 
-    var cells = canvas.selectAll(".cell")
+ 	cells = canvas.selectAll(".cell")
     	.data(treemap)
     	.enter()
     	.append("g")
@@ -38,7 +44,7 @@ d3.json('cu_data_4.json', function(data) {
     	.attr("y", function(d) { return d.y; })
     	.attr("width", function(d) { return d.dx; })
     	.attr("height", function(d) { return d.dy; })
-    	.attr("fill", function(d) { return d.children ? "white" : color(d.parent.name) })
+    	.attr("fill", function(d) { return d.children ? null : color(d.parent.name) })
 		.attr("class", function(d) {
 			if (d.depth == 0) {
 				return 'top_rect';
@@ -81,28 +87,17 @@ d3.json('cu_data_4.json', function(data) {
 		.style("font-size", function(d) { return Math.max(5, 0.15*Math.sqrt(d.area)) + 'px';});
 
 
-
 	d3.selectAll(".company_div")
 		.on("mouseover", function(d) {
 			// make the country light up
-    		d3.selectAll(".company_rect")
-    			.filter(function(e) { return e.parent.name != d.parent.name;})
-    			.style("opacity", null);
-
-    		d3.selectAll(".company_rect")
-    			.filter(function(e) { return e.parent.name == d.parent.name;})
-    			.style("opacity", 0.5);
-
 			d3.selectAll(".country_text")
-    			.filter(function(e) { return e.name != d.parent.name })
-    			.style("position", null)
-    		d3.selectAll(".country_text")
-    			.filter(function(e) { return e.name == d.parent.name })
-    			.style("position", "relative")
+				.style("z-index", function(e) { return (e.name == d.parent.name) ? 0 : -1; })
+
+    		d3.selectAll(".company_rect")
+    			.style("opacity", function(e) { return (e.parent.name == d.parent.name) ? 0.7 : 1; });
+
 
   			});
-
-
 });
 
 </script>

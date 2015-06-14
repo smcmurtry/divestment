@@ -12,10 +12,12 @@ body {
     display: table;
 }
 
-
 .country_text {
 	font-size:40px;
 	color:#000;
+	opacity: 1;
+	position: fixed;
+	z-index: -1;
 }
 
 .company_text, .country_text {
@@ -28,6 +30,6 @@ body {
 	color: #ffffff;
 }
 .country_rect {
-	color:#d3d3d3;
+	opacity: 0;
 }
 
