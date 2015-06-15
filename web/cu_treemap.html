@@ -14,6 +14,11 @@ var margin = {top: 50, right: 50, bottom: 50, left: 50},
     width = window.innerWidth - margin.left - margin.right,
     height = window.innerHeight - margin.top - margin.bottom;
 
+var node, root;
+
+var x = d3.scale.linear().range([0, width]),
+    y = d3.scale.linear().range([0, height]);
+
 var color = d3.scale.category20(); //category10();
 
 var canvas = d3.select("body").append("svg")
@@ -21,6 +26,7 @@ var canvas = d3.select("body").append("svg")
 	.attr('height', height);
 
 d3.json('cu_data_4.json', function(data) { 
+    node = root = data;
 
 	var treemap = d3.layout.treemap()
     	.size([width, height])
@@ -40,71 +46,104 @@ d3.json('cu_data_4.json', function(data) {
     	.attr("height", function(d) { return d.dy; })
     	.attr("fill", function(d) { return d.children ? "white" : color(d.parent.name) })
 		.attr("class", function(d) {
-			if (d.depth == 0) {
-				return 'top_rect';
-			} else if (d.depth == 1) {
-				return 'country_rect';
-			} else {
-				return 'company_rect';
-			}
+			if (d.depth == 0) { return 'top_rect'; } 
+			else if (d.depth == 1) { return 'country_rect'; } 
+			else { return 'company_rect'; }
 		});
 
 	canvas.selectAll("g")
 		.append("foreignObject")
+		.attr("class", 'fobj')
     	.attr("x", function(d) { return d.x; })
     	.attr("y", function(d) { return d.y; })
     	.attr("width", function(d) { return d.dx; })
     	.attr("height", function(d) { return d.dy; })
     	.append("xhtml:div")
     	.attr("class", function(d) {
-			if (d.depth == 0) {
-				return 'top_div';
-			} else if (d.depth == 1) {
-				return 'country_div';
-			} else {
-				return 'company_div';
-			}
+			if (d.depth == 0) { return 'top_div'; } 
+			else if (d.depth == 1) { return 'country_div'; } 
+			else { return 'company_div'; }
 		})
 		.append("xhtml:div")
 		.attr("class", function(d) {
-			if (d.depth == 0) {
-				return 'top_text';
-			} else if (d.depth == 1) {
-				return 'country_text';
-			} else {
-				return 'company_text';
-			}
+			if (d.depth == 0) { return 'top_text'; } 
+			else if (d.depth == 1) { return 'country_text'; } 
+			else { return 'company_text'; }
 		})
-		.html(function(d) { return d.name; });
+		.html(function(d) { return (d.depth == 2) ? d.name : null; });
 
 	d3.selectAll(".company_text")
 		.style("font-size", function(d) { return Math.max(5, 0.15*Math.sqrt(d.area)) + 'px';});
 
-	d3.selectAll(".company_div")
-		.on("mouseover", function(d) {
-			// make the country light up
-			d3.selectAll(".country_text")
-				.style("z-index", function(e) { return (e.name == d.parent.name) ? 0 : -1; })
-				.style("color", function(e) { return (e.name == d.parent.name) ? "black" : "white"; });
+	d3.selectAll(".country_div")
+		.on("mouseover", function(d) { add_hover(d); })
+		.on("click", function(d) { 
+			if (node == d) { 
+				zoom(root); 
+				d3.selectAll(".country_div")
+	  				.filter(function(e) { return d == e; })
+					.on("mouseover", function(d) { add_hover(d); });
+			}
+			else { zoom(d); }
+			});
 
-    		d3.selectAll(".company_rect")
-    			.style("opacity", function(e) { return (e.parent.name == d.parent.name) ? 0.5 : 1; });
-  			})
-		.on("click", function(d) { on_click(d); });
-
-	d3.selectAll(".country_text")
-		.on("click", function(d) { on_click(d); });
 
 });
 
-function on_click(d) {
+function add_hover(d) {
+
 	d3.selectAll(".country_text")
-		.style("z-index", -1)
-		.style("color", "white");
+		.html(function(e) { return (d.name == e.name) ? e.name : null; })
 
-	d3.selectAll(".company_rect")
-		.style("opacity", 1);
+    d3.selectAll(".company_rect")
+    	.style("opacity", function(e) { return (e.parent.name == d.name) ? 0.5 : 1; });
 
+}
+
+function remove_hover(d) {
+
+	d3.selectAll(".country_div")
+	  .filter(function(e) { return d == e; })
+	  .on("mouseover", null);
+
+	d3.selectAll(".country_text")
+		.filter(function(e) { return (d.name == e.name); })
+		.html(null);
+
+    d3.selectAll(".company_rect")
+    	.filter(function(e) { return (d.name == e.parent.name); })
+    	.style("opacity", 1);
+
+
+}
+
+function zoom(dd) {
+  var kx = width / dd.dx, ky = height / dd.dy;
+  x.domain([dd.x, dd.x + dd.dx]);
+  y.domain([dd.y, dd.y + dd.dy]);
+
+  var t = d3.selectAll("g.cell").transition()
+      .duration(d3.event.altKey ? 7500 : 750)
+      .attr("transform", function(d) { return "translate(" + (x(d.x) - d.x) + "," + (y(d.y) - d.y) + ")"; });
+
+  t.select("rect")
+      .attr("width", function(d) { return kx * d.dx; })
+      .attr("height", function(d) { return ky * d.dy; });
+
+  t.select(".fobj")
+  	  .attr("width", function(d) { return kx * d.dx; })
+      .attr("height", function(d) { return ky * d.dy; });
+
+  t.select(".company_text")
+      .style("font-size", function(d) { return Math.max(5, 0.15*Math.sqrt(kx*ky*d.dx*d.dy)) + 'px';});
+
+  d3.selectAll(".company_div")
+  	.on("mouseover", null);
+
+  remove_hover(dd);
+
+  node = dd;
+  d3.event.stopPropagation();
 }
 
 </script>
