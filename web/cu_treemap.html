@@ -2,16 +2,16 @@
 
 <link rel="stylesheet" type="text/css" href="cu_treemap.css"/>
 
-<body><br><br></body>
+<body></body>
 
 <script src="d3.v3.min.js"></script>
 
 <script>
 
 var margin = {top: 50, right: 50, bottom: 50, left: 50},
+	legend_height = 50,
   width = window.innerWidth - margin.left - margin.right,
-  height = window.innerHeight - margin.top - margin.bottom;
-
+  height = window.innerHeight - margin.top - margin.bottom - legend_height;
 var node, root;
 
 var x = d3.scale.linear().range([0, width]),
@@ -22,7 +22,7 @@ var color_2 = {'Coal':'#696969', "Oil & Gas":"#5C75F3"}  //d3.scale.category10()
 
 var canvas = d3.select("body").append("svg")
 	.attr('width', width)
-	.attr('height', height);
+	.attr('height', height + legend_height);
 
 d3.json('cu_data_4.json', function(data) { 
   node = root = data;
@@ -78,40 +78,84 @@ d3.json('cu_data_4.json', function(data) {
 	d3.selectAll(".company_text")
 		.style("font-size", function(d) { return Math.max(5, 0.15*Math.sqrt(d.area)) + 'px';});
 
+	add_hover();
+
 	d3.selectAll(".country_div")
-		.on("mouseover", function(d) { add_hover(d); })
 		.on("click", function(d) { 
-			if (node == d) { 
-				zoom(root); 
-				d3.selectAll(".country_div")
-	  			.filter(function(e) { return d == e; })
-					.on("mouseover", function(d) { add_hover(d); });
-			} else { zoom(d); }
+			if (node == d) {
+				// zooming out
+				zoom(root);
+				add_hover();
+				d3.select(".legend_cell").remove();
+			} else {
+				// zooming in
+				zoom(d);
+				remove_hover();
+				add_legend(); 
+			}
 		});
 });
 
-function add_hover(d) {
-
-	d3.selectAll(".country_text")
-		.html(function(e) { return (d.name == e.name) ? e.name : null; })
-
-  d3.selectAll(".company_rect")
-  	.style("opacity", function(e) { return (e.parent.name == d.name) ? 0.5 : 1; });
-}
-
-function remove_hover(d) {
+function add_hover() {
 
 	d3.selectAll(".country_div")
-	  .filter(function(e) { return d == e; })
-	  .on("mouseover", null);
+		.on("mouseover", function(d) { 
 
-	d3.selectAll(".country_text")
-		.filter(function(e) { return (d.name == e.name); })
-		.html(null);
+			d3.selectAll(".country_text")
+				.html(function(e) { return (d.name == e.name) ? e.name : null; })
 
-  d3.selectAll(".company_rect")
-  	.filter(function(e) { return (d.name == e.parent.name); })
-  	.style("opacity", 1);
+		  d3.selectAll(".company_rect")
+		  	.style("opacity", function(e) { return (e.parent.name == d.name) ? 0.5 : 1; });
+	
+	});
+}
+
+function remove_hover() {
+	
+	d3.selectAll(".country_div").on("mouseover", null);
+	d3.selectAll(".country_text").html(null);
+  d3.selectAll(".company_rect").style("opacity", 1);
+}
+
+function add_legend() {
+
+	function add_legend_swatch(legend_cell, colour, x_pos) {
+	  legend_cell.append("rect")
+	  	.attr("class", "legend_swatch")
+	  	.attr("x", x_pos)
+	  	.attr("y", height + legend_height*0.3*0.5)
+	  	.attr("height", legend_height*0.7)
+	  	.attr("width", width*0.05)
+	  	.attr("fill", colour);
+	}
+
+	function add_legend_text(legend_cell, text, x_pos) {
+    legend_cell.append("foreignObject")
+	  	.attr("x", x_pos)
+	  	.attr("y", height + legend_height*0.3*0.5)
+	  	.attr("height", legend_height*0.7)
+	  	.attr("width", width*0.3)
+			.append("xhtml:div")
+			.html(text)
+			.attr("class", "legend_text");
+	}
+
+	var legend_cell = canvas.append("g")
+		.attr("class", "legend_cell");
+
+	legend_cell.append("rect")
+		 .attr("class", "legend_bkgrd")
+		.attr("x", 0)
+  	.attr("y", height)
+  	.attr("height", legend_height)
+  	.attr("width", width)
+  	.attr("fill", "white");
+
+  add_legend_swatch(legend_cell, color_2["Coal"], 0);
+  add_legend_swatch(legend_cell, color_2["Oil & Gas"], width*0.5);
+	add_legend_text(legend_cell, "= Coal Reserves", width*0.05 + 10)
+	add_legend_text(legend_cell, "= Oil & Gas Reserves", width*0.55 + 10)
+
 }
 
 function zoom(dd) {
@@ -142,12 +186,7 @@ function zoom(dd) {
 
   t.select(".company_text")
     .style("font-size", function(d) { return Math.max(5, 0.15*Math.sqrt(kx*ky*d.dx*d.dy)) + 'px';});
-
-  d3.selectAll(".company_div")
-  	.on("mouseover", null);
-
-  remove_hover(dd);
-
+  
   node = dd;
   d3.event.stopPropagation();
 }

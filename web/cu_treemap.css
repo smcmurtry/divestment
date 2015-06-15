@@ -1,4 +1,8 @@
 body {
+    margin-left:50px;
+    margin-right:50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -36,3 +40,9 @@ body {
 	opacity: 0;
 }
 
+
+
+.legend_text {
+	color: black;
+	font-size: 30px;
+}
