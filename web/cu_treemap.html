@@ -18,6 +18,7 @@ var x = d3.scale.linear().range([0, width]),
   y = d3.scale.linear().range([0, height]);
 
 var color = d3.scale.category20(); //category10();
+var color_2 = {'Coal':'#696969', "Oil & Gas":"#5C75F3"}//d3.scale.category10();
 
 var canvas = d3.select("body").append("svg")
 	.attr('width', width)
@@ -120,7 +121,16 @@ function zoom(dd) {
 
   t.select("rect")
     .attr("width", function(d) { return kx * d.dx; })
-    .attr("height", function(d) { return ky * d.dy; });
+    .attr("height", function(d) { return ky * d.dy; })
+    .attr("fill", function(d) { 
+    	if (dd == root) {
+    		// change coloring back
+    		return d.children ? "white" : color(d.parent.name)
+    	} else {
+    		// colour by type
+    		return d.children ? "white" : color_2[d.type];
+    	}
+   });
 
   t.select(".fobj")
 	  .attr("width", function(d) { return kx * d.dx; })
