@@ -17,8 +17,8 @@ var node, root;
 var x = d3.scale.linear().range([0, width]),
   y = d3.scale.linear().range([0, height]);
 
-var color = d3.scale.category20(); //category10();
-var color_2 = {'Coal':'#696969', "Oil & Gas":"#5C75F3"}  //d3.scale.category10();
+var color = d3.scale.category20(); 
+var color_2 = {'Coal':'#696969', "Oil & Gas":"#5C75F3"} 
 
 function create_svg_canvas(w, h) {
 	var canvas = d3.select("body").append("svg")
@@ -112,13 +112,6 @@ d3.json('cu_data_4.json', function(data) {
 		});
 });
 
-function update_text_size(selection) {
-	selection.selectAll(".company_name")
-		.style("font-size", function(d) { return Math.max(5, 0.15*Math.sqrt(d.area)) + 'px';});
-
-	selection.selectAll(".reserve_size")
-		.style("font-size", function(d) { return Math.max(5, 0.15*Math.sqrt(d.area)) + 'px';});
-}
 
 function add_hover() {
 
