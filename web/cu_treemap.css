@@ -36,6 +36,7 @@ body {
 .company_text {
 	color: #ffffff;
 }
+
 .country_rect {
 	opacity: 0;
 }
@@ -45,4 +46,10 @@ body {
 .legend_text {
 	color: black;
 	font-size: 30px;
+}
+
+
+.unit {
+	float: right;
+	display: inline-block;
 }
