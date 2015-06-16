@@ -9,22 +9,11 @@ import json
 
 # In[2]:
 
-df_coal = pd.DataFrame.from_csv("../web/cu_coal_headquarters.csv")
-df_oil_gas = pd.DataFrame.from_csv("../web/cu_oil_and_gas_headquarters.csv")
-
-
-# In[3]:
-
-df_coal.head()
-
-
-# In[4]:
-
 df1 = pd.DataFrame.from_csv("../web/cu_coal_headquarters.csv")
 df2 = pd.DataFrame.from_csv("../web/cu_oil_and_gas_headquarters.csv")
 
 
-# In[5]:
+# In[3]:
 
 df1['type'] = ['Coal']*len(df1)
 df2['type'] = ['Oil & Gas']*len(df2)
@@ -32,13 +21,13 @@ del df2['oil_Gt_CO2']
 del df2['gas_Gt_CO2']
 
 
-# In[6]:
+# In[4]:
 
 df3 = df1.append(df2, ignore_index=True)
 df3.to_csv('../web/cu_joined.csv')
 
 
-# In[7]:
+# In[5]:
 
 def push_row(root, df, i, ident):
     for c1 in root["children"]:
@@ -60,7 +49,7 @@ def push_row(root, df, i, ident):
     return root, ident
 
 
-# In[8]:
+# In[6]:
 
 root = {'name': 'top', 'children':[]}
 ident = 0
@@ -68,14 +57,14 @@ for i in df3.index:
     root, ident = push_row(root, df3, i, ident)
 
 
-# In[9]:
+# In[7]:
 
 f = open('../web/cu_data_3.json', 'w')
 f.write(json.dumps(root))
 f.close()
 
 
-# In[10]:
+# In[8]:
 
 def push_row_2(root, df, i, ident):
     for c1 in root["children"]:
@@ -91,7 +80,7 @@ def push_row_2(root, df, i, ident):
     return root, ident
 
 
-# In[11]:
+# In[9]:
 
 root = {'name': 'top', 'children':[]}
 ident = 0
@@ -99,12 +88,12 @@ for i in df3.index:
     root, ident = push_row_2(root, df3, i, ident)
 
 
-# In[12]:
+# In[10]:
 
 f = open('../web/cu_data_4.json', 'w')
 f.write(json.dumps(root))
 f.close()
 
 
-# In[13]:
+# In[14]:
 
