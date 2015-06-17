@@ -83,8 +83,9 @@ d3.json('cu_data_4.json', function(data) {
   	.attr("class", 'fobj')
   	.attr("x", function(d) { return d.x; })
   	.attr("y", function(d) { return d.y; })
-  	.attr("width", function(d) { return d.dx; })
+  	.attr("width", function(d) { return d.dx; })// 1000) //function(d) { return d.dx; })
   	.attr("height", function(d) { return d.dy; })
+    .attr("overflow", "visible")
   	.append("xhtml:div")
   	.attr("class", function(d) {
   		if (d.depth == 0) { return 'top_div'; } 
@@ -221,7 +222,7 @@ function zoom(dd, clicked_thing) {
    });
 
   t.selectAll(".fobj")
-    .attr("width", function(d) { return kx * d.dx; })
+    .attr("width", function(d) { return kx * d.dx; }) //1000) //function(d) { return kx * d.dx; })
     .attr("height", function(d) { return ky * d.dy; });
 
   t.selectAll(".company_div, .country_div")
