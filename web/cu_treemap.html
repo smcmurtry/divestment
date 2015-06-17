@@ -13,12 +13,12 @@ var margin = {top: 50, right: 50, bottom: 50, left: 50},
   width = window.innerWidth - margin.left - margin.right,
   height = window.innerHeight - margin.top - margin.bottom - legend_height;
 var node, root;
-
 var x = d3.scale.linear().range([0, width]),
   y = d3.scale.linear().range([0, height]);
-
 var color = d3.scale.category20(); 
 var color_2 = {'Coal':'#696969', "Oil & Gas":"#5C75F3"} 
+var text_multiplier = 0.13;
+
 
 function create_svg_canvas(w, h) {
 	var canvas = d3.select("body").append("svg")
@@ -31,6 +31,7 @@ legend_canvas = create_svg_canvas(width, legend_height);
 canvas = create_svg_canvas(width, height);
 
 d3.json('cu_data_4.json', function(data) { 
+
   node = root = data;
 
 	var treemap = d3.layout.treemap()
@@ -77,35 +78,21 @@ d3.json('cu_data_4.json', function(data) {
 			else { return 'company_text'; }
 		})
 		.filter(function(d) { return d.depth == 2; })
-		.style("font-size", function(d) { return Math.max(5, 0.15*Math.sqrt(d.area)) + 'px';});
+		.style("font-size", function(d) { return Math.max(5, text_multiplier*Math.sqrt(d.area)) + 'px';});
 
-	canvas.selectAll(".company_text")
-		.append("xhtml:div")
-		.attr("class", "company_name")
-		.html(function(d) { return d.name;	})
-
-		
-	canvas.selectAll(".company_text")
-		.append("xhtml:div")
-		.attr("class", "reserve_size")
-		.html(function(d) { return d3.round(d.value, 1); })
-		.append("xhtml:span")
-		.attr("class", "units")
-		.html(" Gt CO<sub>2</sub>")
-		.style("font-size", "0.7em")
-
+	add_text();
 	add_hover();
 
 	d3.selectAll(".country_div")
 		.on("click", function(d) { 
 			if (node == d) {
 				// zooming out
-				zoom(root);
+				zoom(root, d);
 				add_hover();
 				d3.selectAll(".legend_cell").remove();
 			} else {
 				// zooming in
-				zoom(d);
+				zoom(d, d);
 				remove_hover();
 				add_legend(d); 
 			}
@@ -113,18 +100,35 @@ d3.json('cu_data_4.json', function(data) {
 });
 
 
+function add_text() {
+
+	company_text = canvas.selectAll(".company_text");
+
+	company_text.append("xhtml:div")
+		.attr("class", "company_name")
+		.html(function(d) { return d.name;	})
+
+	company_text.append("xhtml:div")
+		.attr("class", "reserve_size")
+		.html(function(d) { return d3.round(d.value, 1); })
+		.append("xhtml:span")
+		.attr("class", "units")
+		.html(" Gt CO<sub>2</sub>")
+		.style("font-size", "0.7em")
+}
+
+
 function add_hover() {
 
 	d3.selectAll(".country_div")
 		.on("mouseover", function(d) { 
-
 			d3.selectAll(".country_text")
 				.html(function(e) { return (d.name == e.name) ? e.name : null; })
-
 		  d3.selectAll(".company_rect")
 		  	.style("opacity", function(e) { return (e.parent.name == d.name) ? 0.5 : 1; });
 	});
 }
+
 
 function remove_hover() {
 
@@ -132,6 +136,7 @@ function remove_hover() {
 	d3.selectAll(".country_text").html(null);
   d3.selectAll(".company_rect").style("opacity", 1);
 }
+
 
 function add_legend(d) {
 
@@ -164,16 +169,18 @@ function add_legend(d) {
   add_legend_swatch(legend_cell, color_2["Oil & Gas"], width*0.6);
 	add_legend_text(legend_cell, "= Coal Reserves", width*0.35 + 10);
 	add_legend_text(legend_cell, "= Oil & Gas Reserves", width*0.65 + 10);
-
 }
 
-function zoom(dd) {
+
+function zoom(dd, clicked_thing) {
+
   var kx = width / dd.dx, ky = height / dd.dy;
   x.domain([dd.x, dd.x + dd.dx]);
   y.domain([dd.y, dd.y + dd.dy]);
+  var kx_ky = kx*ky;
 
   var t = d3.selectAll("g.cell").transition()
-    .duration(d3.event.altKey ? 7500 : 750)
+    .duration(d3.event.altKey ? 7500 : 750) //750)
     .attr("transform", function(d) { return "translate(" + (x(d.x) - d.x) + "," + (y(d.y) - d.y) + ")"; });
 
   t.select("rect")
@@ -194,7 +201,9 @@ function zoom(dd) {
     .attr("height", function(d) { return ky * d.dy; });
 
 	t.selectAll(".company_text")
-		.style("font-size", function(d) { return Math.max(5, 0.15*Math.sqrt(kx*ky*d.area)) + 'px';});
+	// only change font size for the selected country, because it's slow
+		.filter(function(d) { return (d.parent.name == clicked_thing.name); })
+		.style("font-size", function(d) { return text_multiplier*Math.sqrt(kx_ky*d.area) + 'px';});
   
   node = dd;
   d3.event.stopPropagation();
