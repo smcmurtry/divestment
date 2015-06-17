@@ -1,8 +1,5 @@
 body {
-    margin-left:50px;
-    margin-right:50px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin:50px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -13,13 +10,22 @@ body {
 .company_div, .country_div {
 	height: 100%;
 	width: 100%;
-    display: table;
 }
 
+.company_div {  display: table;}
 .country_text {
 	font-size:40px;
 	color:black;
 	opacity: 1;
+	position: fixed;
+	z-index: 1;
+}
+
+.company_text {
+	display: table-cell;
+	color: #ffffff;
+	text-align: center;
+	vertical-align: middle;
 }
 
 .country_div {
@@ -27,20 +33,9 @@ body {
 	z-index: 0;
 }
 
-.company_text {
-	display: table-cell;
-	text-align: center;
-	vertical-align: middle;
-}
-
-.company_text {
-	color: #ffffff;
-}
-
-.country_rect {
+.country_cell .country_rect {
 	opacity: 0;
 }
-
 
 
 .legend_text {

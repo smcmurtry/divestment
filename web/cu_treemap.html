@@ -1,4 +1,5 @@
-<html>
+<html lang="en">
+<meta charset="utf-8">
 <title>Carbon Underground 200</title>
 
 <link rel="stylesheet" type="text/css" href="cu_treemap.css"/>
@@ -6,8 +7,6 @@
 <body>
 <h1>Carbon Underground 200</h1>
 </body>
-
-
 
 <script src="d3.v3.min.js"></script>
 
@@ -24,7 +23,7 @@ var color = d3.scale.category20();
 var color_2 = {'Coal':'#696969', "Oil & Gas":"#5C75F3"} 
 var text_multiplier = 0.13;
 
-
+  
 function create_svg_canvas(w, h) {
 	var canvas = d3.select("body").append("svg")
 		.attr('width', w)
@@ -45,13 +44,29 @@ d3.json('cu_data_4.json', function(data) {
   	.ratio(1)
   	.nodes(data);
 
- 	var cells = canvas.selectAll(".cell")
-  	.data(treemap)
+var treemap02 = [],
+	treemap1 = [];
+
+for (var i = treemap.length - 1; i >= 0; i--) {
+	if (treemap[i].depth == 1) { treemap1.push(treemap[i]); } 
+	else if (treemap[i].depth == 2) { treemap02.push(treemap[i]); }
+};
+
+
+  canvas.selectAll(".company_cell")
+  	.data(treemap02)
   	.enter()
   	.append("g")
-  	.attr("class", "cell");
+  	.attr("class", "cell company_cell");
 
-  cells.append("rect")
+  canvas.selectAll(".country_cell")
+  	.data(treemap1)
+  	.enter()
+  	.append("g")
+  	.attr("class", "cell country_cell");
+
+  canvas.selectAll(".cell")
+  	.append("rect")
   	.attr("x", function(d) { return d.x; })
   	.attr("y", function(d) { return d.y; })
   	.attr("width", function(d) { return d.dx; })
@@ -63,27 +78,27 @@ d3.json('cu_data_4.json', function(data) {
 		else { return 'company_rect'; }
 	});
 
-	canvas.selectAll(".cell")
-		.append("foreignObject")
-		.attr("class", 'fobj')
-  	.attr("x", function(d) { return d.x; })
-  	.attr("y", function(d) { return d.y; })
-  	.attr("width", function(d) { return d.dx; })
-  	.attr("height", function(d) { return d.dy; })
-  	.append("xhtml:div")
-  	.attr("class", function(d) {
-			if (d.depth == 0) { return 'top_div'; } 
-			else if (d.depth == 1) { return 'country_div'; } 
-			else { return 'company_div'; }
-		})
-		.append("xhtml:div")
-		.attr("class", function(d) {
-			if (d.depth == 0) { return 'top_text'; } 
-			else if (d.depth == 1) { return 'country_text'; } 
-			else { return 'company_text'; }
-		})
-		.filter(function(d) { return d.depth == 2; })
-		.style("font-size", function(d) { return Math.max(5, text_multiplier*Math.sqrt(d.area)) + 'px';});
+  canvas.selectAll(".cell")
+	.append("foreignObject")
+	.attr("class", 'fobj')
+	.attr("x", function(d) { return d.x; })
+	.attr("y", function(d) { return d.y; })
+	.attr("width", function(d) { return d.dx; })
+	.attr("height", function(d) { return d.dy; })
+	.append("xhtml:div")
+	.attr("class", function(d) {
+		if (d.depth == 0) { return 'top_div'; } 
+		else if (d.depth == 1) { return 'country_div'; } 
+		else { return 'company_div'; }
+	})
+	.append("xhtml:div")
+	.attr("class", function(d) {
+		if (d.depth == 0) { return 'top_text'; } 
+		else if (d.depth == 1) { return 'country_text'; } 
+		else { return 'company_text'; }
+	})
+	.filter(function(d) { return d.depth == 2; })
+	.style("font-size", function(d) { return Math.max(5, text_multiplier*Math.sqrt(d.area)) + 'px';});
 
 	add_text();
 	add_hover();
@@ -120,16 +135,22 @@ function add_text() {
 		.attr("class", "units")
 		.html(" Gt CO<sub>2</sub>")
 		.style("font-size", "0.7em")
+
+  // canvas.selectAll(".country_text")
+  //   // .append("xhtml:div")
+  //   // .attr("class", "country_name")
+  //   .html(function(d) { return d.name;  })
 }
 
 
 function add_hover() {
 
-	d3.selectAll(".country_div")
+	canvas.selectAll(".country_div")
 		.on("mouseover", function(d) { 
-			d3.selectAll(".country_text")
-				.html(function(e) { return (d.name == e.name) ? e.name : null; })
-		  d3.selectAll(".company_rect")
+			canvas.selectAll(".country_text")
+        //.append("xhtml:div")
+				.html(function(e) { return (d.name == e.name) ? e.name : null; });
+		  canvas.selectAll(".company_rect")
 		  	.style("opacity", function(e) { return (e.parent.name == d.name) ? 0.5 : 1; });
 	});
 }
