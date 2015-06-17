@@ -48,8 +48,4 @@ body {
 	font-size: 30px;
 }
 
-
-.unit {
-	float: right;
-	display: inline-block;
-}
+footer {margin-top: 50px;}

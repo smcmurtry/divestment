@@ -1,8 +1,13 @@
 <html>
+<title>Carbon Underground 200</title>
 
 <link rel="stylesheet" type="text/css" href="cu_treemap.css"/>
 
-<body></body>
+<body>
+<h1>Carbon Underground 200</h1>
+</body>
+
+
 
 <script src="d3.v3.min.js"></script>
 
@@ -144,8 +149,8 @@ function add_legend(d) {
 	  legend_cell.append("rect")
 	  	.attr("class", "legend_swatch")
 	  	.attr("x", x_pos)
-	  	.attr("y", legend_height*0.3*0.5)
-	  	.attr("height", legend_height*0.7)
+	  	.attr("y", legend_height*0.5*0.5)
+	  	.attr("height", legend_height*0.5)
 	  	.attr("width", width*0.05)
 	  	.attr("fill", colour);
 	}
@@ -210,5 +215,18 @@ function zoom(dd, clicked_thing) {
 }
 
 </script>
+
+<footer>
+  <div id="footnote">
+
+    <p>This tree diagram is a visualization of the Carbon Underground 200 - the 200 most dangerous fossil fuel companies ranked by the size of their carbon reserves.</p>
+    <p>Companies are grouped by the location of their corporate headquarters.</p>
+
+    <p>The Carbon Underground 200 list was researched and created by <a href="http://fossilfreeindexes.com/">Fossil Free Indexes</a>. </p>
+
+    <p>&copy; 2015 <a class='my-link' href="http://stephenmcmurtry.org/">Stephen McMurtry</a></p>
+
+  </div>
+</footer>
 
 </html>
